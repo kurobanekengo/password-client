@@ -1,18 +1,24 @@
 const path = require('path');
+const sourcePath = path.resolve(__dirname, './source');
 const outputPath = path.resolve(__dirname, './public/js');
 const htmlContentPath = path.resolve(__dirname, './public');
 
 module.exports = {
     mode: 'development',
-    entry: './source/index.ts',
+    entry: `${sourcePath}/index.ts`,
     output: {
         filename: 'bundle.js',
         path:  outputPath
+    },
+    watch: true,
+    watchOptions: {
+      poll: 500
     },
     module: {
         rules:[
             {
                 use: 'ts-loader',
+                test: /\.ts$/,
                 exclude: /node_modules/,
             }
         ]
@@ -21,6 +27,12 @@ module.exports = {
         extensions: ['.ts', '.js']
     },
     devServer: {
-        contentBase: htmlContentPath
+        contentBase: htmlContentPath,
+	watchContentBase: true,
+        watchOptions: {
+          poll: 500
+        },
+        hot: true,
+        inline: true
     }
 };
