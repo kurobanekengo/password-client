@@ -5,26 +5,22 @@ const htmlContentPath = path.resolve(__dirname, './public');
 
 module.exports = {
     mode: 'development',
-    entry: `${sourcePath}/index.ts`,
+    entry: `${sourcePath}/index.tsx`,
     output: {
         filename: 'bundle.js',
         path:  outputPath
-    },
-    watch: true,
-    watchOptions: {
-      poll: 500
     },
     module: {
         rules:[
             {
                 use: 'ts-loader',
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
             }
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.tsx', '.js']
     },
     devServer: {
         contentBase: htmlContentPath,
