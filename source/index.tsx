@@ -1,11 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { DefaultTypelessProvider } from 'typeless';
-import { Password } from './features/components/password';
+import { DefaultTypelessProvider, Hmr, startHmr } from 'typeless';
 
-ReactDOM.render(
-    <DefaultTypelessProvider>
-        <Password />
-    </DefaultTypelessProvider>,
-    document.getElementById('approot')
-)
+const MOUNT_NODE = document.getElementById('approot');
+const render = () => {
+    const App = require('./features/components/password').Password;
+    ReactDOM.unmountComponentAtNode(MOUNT_NODE);
+    ReactDOM.render(
+        <Hmr>
+            <DefaultTypelessProvider>
+                <App />
+            </DefaultTypelessProvider>
+        </Hmr>
+        ,MOUNT_NODE
+    );
+};
+if (module.hot) {
+    module.hot.accept('./features/components/password', () => {
+        startHmr();
+        render();        
+    });
+}
+render();

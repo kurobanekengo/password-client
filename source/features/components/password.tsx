@@ -3,7 +3,7 @@ import { usePasswordModule } from '../passwordModule';
 
 export const PasswordComponent = () => {
     return (
-        <div>HELLO!</div>
+        <div>HELLO</div>
     );
 };
 

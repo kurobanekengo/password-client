@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/webpack-env": "^1.15.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rxjs": "^6.5.4",
