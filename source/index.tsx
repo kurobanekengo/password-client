@@ -4,12 +4,12 @@ import { DefaultTypelessProvider, Hmr, startHmr } from 'typeless';
 
 const MOUNT_NODE = document.getElementById('approot');
 const render = () => {
-  const App = require('./features/components/password').Password;
+  const App = require('./password/containers/password').Password;
   ReactDOM.unmountComponentAtNode(MOUNT_NODE);
   ReactDOM.render(
     <Hmr>
         <DefaultTypelessProvider>
-        <App />
+          <App />
         </DefaultTypelessProvider>
     </Hmr>
     ,MOUNT_NODE
@@ -17,7 +17,7 @@ const render = () => {
 };
 
 if (module.hot) {
-  module.hot.accept('./features/components/password', () => {
+  module.hot.accept('./password/containers/password', () => {
     startHmr();
     render();
   });
