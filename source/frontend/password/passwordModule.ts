@@ -1,6 +1,6 @@
 import { createModule } from 'typeless';
-import { PasswordSymbol } from './passwordSymbol';
-import { PasswordState, getInitialPasswordState } from './passwordState';
+import { PasswordSymbol } from '@frontend/password/passwordSymbol';
+import { PasswordState, getInitialPasswordState } from '@frontend/password/passwordState';
 
 const [module, actions, getState] =
   createModule(PasswordSymbol)
