@@ -1,27 +1,38 @@
 {
-  "name": "password-client",
+  "name": "passsword-client",
   "version": "1.0.0",
-  "description": "npm install webpack webpack-cli webpack-dev-server typescript ts-loader",
+  "description": "``` npm install webpack webpack-cli webpack-dev-server typescript ts-loader ```",
   "main": "webpack.config.js",
-  "dependencies": {
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "@types/webpack-env": "^1.15.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "rxjs": "^6.5.4",
-    "ts-loader": "^6.2.1",
-    "typeless": "^1.5.0",
-    "typescript": "^3.8.2",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  },
-  "devDependencies": {},
   "scripts": {
     "start": "webpack -w & webpack-dev-server --mode=development --host 0.0.0.0",
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurobanekengo/password-client.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurobanekengo/password-client/issues"
+  },
+  "homepage": "https://github.com/kurobanekengo/password-client#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "rxjs": "^6.5.4",
+    "typeless": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/webpack-env": "^1.15.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
 }
