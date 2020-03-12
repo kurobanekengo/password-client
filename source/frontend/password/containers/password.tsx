@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { usePasswordModule } from '@frontend/password/passwordModule';
+import { useActions } from 'typeless';
+import { PasswordActions } from '@frontend/password/passwordModule';
 import { PasswordComponent, PasswordComponentProps } from '@frontend/password/components/password';
 
 export const Password = () => {
-  usePasswordModule();
+  const passwordActions = useActions(PasswordActions);
+  React.useEffect(() => {
+    passwordActions.getPasswordList();
+  }, []);
   const passwordProp: PasswordComponentProps = {
     passwords: [
       {
         name: 'XXX',
         userId: 'Yamada',
-        password: '198103'
+        password: '19810333'
       },
       {
         name: 'YYY',

@@ -2,8 +2,20 @@
     "compilerOptions": {
       "sourceMap": true,
       "target": "es5",
-      "module": "es2015",
+      "module": "esNext",
       "jsx": "react",
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "outDir": "./public/js",
+      "baseUrl": "source",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "lib": ["es6", "dom"],
+      "paths": {
+        "@frontend/*": ["frontend/*"],
+        "@api/*": ["api/*"]
+      }
     }
 }

@@ -28,7 +28,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+        alias: {
+            "@frontend": path.resolve(__dirname, "source/frontend"),
+            "@api": path.resolve(__dirname, "source/api")
+        }
     },
     devServer: {
         contentBase: htmlContentPath,
