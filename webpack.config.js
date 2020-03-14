@@ -37,9 +37,6 @@ module.exports = {
     devServer: {
         contentBase: htmlContentPath,
 	    watchContentBase: true,
-        watchOptions: {
-          poll: 500
-        },
         hot: true,
         inline: true
     },
