@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// デコレータファクトリー
 function get(apiPath: string, mock: boolean = false) {
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     console.log("f(): called");
@@ -11,13 +10,10 @@ function get(apiPath: string, mock: boolean = false) {
     console.log("### descriptor ###");
     console.log(descriptor);
     if (mock) {
-      console.log(window.FileReader);
-      //const text = readFileSync('.passwords.xml');
-      //console.log(text);
     } else {
       descriptor.value = (req: Empty) => {
         return axios
-          .get<any>("http://192.168.33.12:3000/passwords")
+          .get<any>("http://192.168.33.12:3000/api/v1/passwords")
           .then((res: any) => {
             return res;
           })
@@ -46,20 +42,5 @@ class PasswordApi {
     return callApi<Empty, string>(req);
   }
 }
-
-
-
-// class PasswordApi extends Api {
-
-//   @get("passwords")
-//   async getPasswordList() {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => resolve(), 500);
-//     })
-//     .then(() => {
-//       return 5;
-//     });
-//   }
-// }
 
 export const passwordApi = new PasswordApi();
