@@ -22,7 +22,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rxjs": "^6.5.4",
-    "typeless": "^1.5.0"
+    "typeless": "^1.5.0",
+    "password-core": "git+https://github.com/kurobanekengo/password-core.git"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
