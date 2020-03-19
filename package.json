@@ -19,17 +19,20 @@
   "homepage": "https://github.com/kurobanekengo/password-client#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "password-core": "git+https://github.com/kurobanekengo/password-core.git#develop",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rxjs": "^6.5.4",
-    "typeless": "^1.5.0",
-    "password-core": "git+https://github.com/kurobanekengo/password-core.git"
+    "typeless": "^1.5.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/webpack-env": "^1.15.1",
+    "@zerollup/ts-transform-paths": "^1.7.12",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
