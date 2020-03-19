@@ -3,13 +3,6 @@ import {VOID} from "@core/model/void";
 
 export const mock = () => {
   return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-    console.log("f(): called");
-    console.log("### target ###");
-    console.log(target.constructor.name);
-    console.log("### propertyKey ###");
-    console.log(propertyKey);
-    console.log("### descriptor ###");
-    console.log(descriptor);
     descriptor.value = function() {
       const args = arguments;
       return new Promise((resolve, reject) => {
