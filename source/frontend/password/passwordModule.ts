@@ -2,7 +2,8 @@ import { createModule } from 'typeless';
 import * as Rx from 'typeless/rx';
 import { PasswordSymbol } from '@frontend/password/passwordSymbol';
 import { PasswordState, getInitialPasswordState } from '@frontend/password/passwordState';
-import { passwordApi, empty } from '@api/password/passwordApi';
+import { passwordApi} from '@api/password/passwordApi';
+import {VOID} from "@core/model/void";
 
 const [module, actions, getState] =
   createModule(PasswordSymbol)
@@ -15,13 +16,11 @@ const [module, actions, getState] =
 module
   .epic()
   .on(actions.getPasswordList, () => {
-    console.log("AAAAA");
     return Rx
     .fromPromise(
       passwordApi
-        .getPasswordList(empty)
+        .getPasswordList(VOID, 1)
         .then(res => {
-          console.log(res);
           return res
         }))
     .pipe(Rx.mergeMap(res => {
