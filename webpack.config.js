@@ -31,7 +31,8 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
             "@frontend": path.resolve(__dirname, "source/frontend"),
-            "@api": path.resolve(__dirname, "source/api")
+            "@api": path.resolve(__dirname, "source/api"),
+            "@core": path.resolve(__dirname, "node_modules/password-core/dist")
         }
     },
     devServer: {

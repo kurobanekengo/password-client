@@ -9,13 +9,14 @@
       "strict": true,
       "noImplicitAny": true,
       "outDir": "./public/js",
-      "baseUrl": "source",
+      "baseUrl": "./",
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "lib": ["es6", "dom"],
       "paths": {
-        "@frontend/*": ["frontend/*"],
-        "@api/*": ["api/*"]
+        "@frontend/*": ["source/frontend/*"],
+        "@api/*": ["source/api/*"],
+        "@core/*": ["node_modules/password-core/dist/*"]
       }
     }
 }
