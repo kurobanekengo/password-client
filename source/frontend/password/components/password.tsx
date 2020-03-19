@@ -1,13 +1,8 @@
 import * as React from 'react';
+import {PasswordEntity} from "@core/entity/passwordEntity";
 
 export interface PasswordComponentProps {
-  passwords: PasswordRow[];
-}
-
-export interface PasswordRow {
-  name: string;
-  userId: string;
-  password: string;
+  passwordList: PasswordEntity[]
 }
 
 export const PasswordComponent = (props: PasswordComponentProps) => {
@@ -19,7 +14,7 @@ export const PasswordComponent = (props: PasswordComponentProps) => {
         <tr><td></td></tr>
       </thead>
       <tbody>
-        {props.passwords.map(password => {
+        {props.passwordList.map(password => {
           return (
             <tr>
               <td>{password.name}</td>
