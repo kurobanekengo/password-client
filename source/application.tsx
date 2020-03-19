@@ -4,5 +4,9 @@ import { PasswordListContainer } from '@frontend/password/containers/passwordLis
 
 export const Application = () => {
   usePasswordModule();
-  return <PasswordListContainer />;
+  return (
+    <div>
+      <PasswordListContainer />
+    </div>
+  );
 };

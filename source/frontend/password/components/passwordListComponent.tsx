@@ -1,11 +1,15 @@
 import * as React from 'react';
 import {PasswordEntity} from "@core/entity/passwordEntity";
+import {
+  createNewPasswordListItem,
+  PasswordListItemComponent
+} from "@frontend/password/components/passwordListItemComponent";
 
-export interface PasswordComponentProps {
+export interface PasswordListComponentProps {
   passwordList: PasswordEntity[]
 }
 
-export const PasswordListComponent = (props: PasswordComponentProps) => {
+export const PasswordListComponent = (props: PasswordListComponentProps) => {
   return (
     <table>
       <thead>
@@ -16,21 +20,20 @@ export const PasswordListComponent = (props: PasswordComponentProps) => {
           <td>ユーザID</td>
           <td>パスワード</td>
           <td>備考</td>
+          <td>削除</td>
         </tr>
       </thead>
       <tbody>
-        {props.passwordList.map(password => {
-          return (
-            <tr key={password.id}>
-              <td>{password.category}</td>
-              <td>{password.name}</td>
-              <td>{password.description}</td>
-              <td>{password.userId}</td>
-              <td>{password.password}</td>
-              <td>{password.memo}</td>
-            </tr>
-          );
-        })}
+        {createNewPasswordListItem()}
+        {props.passwordList.map(
+          password =>
+            <PasswordListItemComponent
+              key={password.id}
+              password={password}
+              deletable={true}
+            />
+          )
+        }
       </tbody>
     </table>
   );
