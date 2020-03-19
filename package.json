@@ -32,7 +32,6 @@
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/webpack-env": "^1.15.1",
-    "@zerollup/ts-transform-paths": "^1.7.12",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
