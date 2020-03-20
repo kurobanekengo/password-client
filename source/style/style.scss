@@ -1,3 +1,63 @@
-body {
-  background-color: aqua;
+.passwordList {
+  border-collapse: collapse;
+  td, th {
+    border: 1px solid #999999;
+    padding: 5px;
+  }
+  thead {
+    background-color: gainsboro;
+    color: darkblue;
+  }
+  .editRow {
+    .dirty {
+      background-color: beige;
+      input {
+        background-color: beige;
+      }
+    }
+    input {
+      border-style: none;
+      &:focus {
+        background-color: darkorange;
+        border: 1px solid #cccccc;
+      }
+    }
+  }
+}
+
+
+.category {
+  input {
+    width: 80px;
+  }
+}
+
+.name {
+  input {
+    wdith: 120px;
+  }
+}
+
+.description {
+  input {
+    width: 300px;
+  }
+}
+
+.userId {
+  input {
+    width: 160px;
+  }
+}
+
+.password {
+  input {
+    width: 120px;
+  }
+}
+
+.memo {
+  input {
+    width: 300px;
+  }
 }
