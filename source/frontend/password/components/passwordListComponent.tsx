@@ -11,7 +11,7 @@ export interface PasswordListComponentProps {
 
 export const PasswordListComponent = (props: PasswordListComponentProps) => {
   return (
-    <table>
+    <table className={"passwordList"}>
       <thead>
         <tr>
           <td>カテゴリ</td>

@@ -33,7 +33,7 @@ export interface PasswordListItemComponentProps {
 export const PasswordListItemComponent = (props: PasswordListItemComponentProps) => {
   const listItem = props.password;
   return (
-    <tr key={listItem.id} className={props.deletable ? "editRow" : "newRow"}>
+    <tr key={listItem.id} className={`${props.deletable ? "editRow" : "newRow"} passwordListItem`}>
       <InputItem password={listItem} target={"category"}/>
       <InputItem password={listItem} target={"name"}/>
       <InputItem password={listItem} target={"description"}/>
