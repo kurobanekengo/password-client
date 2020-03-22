@@ -12,6 +12,6 @@ Vagrant.configure("2") do |config|
     owner: "vagrant",
     group: "vagrant",
     rsync_auto: true,
-    rsync__exclude: [".git/", "node_modules/", "public/"]
+    rsync__exclude: [".git/", "node_modules/", "public/js/"]
 
 end
