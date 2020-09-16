@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AxiosResponse } from "axios";
 import {getConfig} from "@core/config/applicationConfig";
 import {ApiDeclaration} from "@core/api/apiDescriptor";
 
@@ -11,9 +12,9 @@ export const createApiClient
   = <REQ, RES, VERSION>(desc: ApiDeclaration<REQ, RES, VERSION>): ApiClient<REQ, RES, VERSION> => {
   return (req, ver) => {
     const apiPath = `http://${config.api.host}:${config.api.port}/${config.api.prefixPath}/v${ver}/${desc.resourceName}`;
-    return axios.get<REQ>(apiPath)
-      .then((res: any) => {
-        return res;
+    return axios.get<RES>(apiPath)
+      .then((res: AxiosResponse<RES>) => {
+        return res.data;
       });
   }
 };

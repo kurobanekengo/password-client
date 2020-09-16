@@ -3,7 +3,7 @@ import {PasswordEntity} from "@core/entity/passwordEntity";
 import {
   createNewPasswordListItem,
   PasswordListItemComponent
-} from "@frontend/password/components/passwordListItemComponent";
+} from "@frontend/components/passwordList/passwordListItemComponent";
 
 export interface PasswordListComponentProps {
   passwordList: PasswordEntity[]

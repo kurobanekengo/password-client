@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { usePasswordModule } from '@frontend/password/passwordModule';
-import { PasswordListContainer } from '@frontend/password/containers/passwordListContainer';
+import { usePasswordModule } from '@frontend/modules/password/passwordModule';
+import { PasswordListContainer } from '@frontend/components/passwordList/passwordListContainer';
 
 export const Application = () => {
   usePasswordModule();
